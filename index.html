@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#18251f">
+  <meta name="description" content="Buku digital Bianglala Nuansa Rasa karya Evi Apriyanti.">
+  <title>Bianglala Nuansa Rasa — Evi Apriyanti</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+</head>
+<body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="Beranda">
+      <span class="brand-mark">✦</span><span><b>RUANG BACA</b><small>Digital Library</small></span>
+    </a>
+    <div class="top-actions">
+      <button class="icon-btn" id="themeBtn" title="Ganti tema" aria-label="Ganti tema">☾</button>
+      <button class="icon-btn" id="fullscreenBtn" title="Layar penuh" aria-label="Layar penuh">⛶</button>
+    </div>
+  </header>
+
+  <main class="shell">
+    <section class="intro">
+      <div class="eyebrow"><span></span> KOLEKSI PUISI & REFLEKSI</div>
+      <h1>Bianglala <em>Nuansa Rasa</em></h1>
+      <p class="subtitle">Sebuah perjalanan rasa, pengalaman, dan kisah inspiratif dalam bait-bait puisi.</p>
+      <div class="author-line"><span class="avatar">EA</span><span><b>Evi Apriyanti</b><small>Penulis · Edisi 2023</small></span></div>
+    </section>
+
+    <section class="reader-layout">
+      <aside class="sidebar" id="sidebar">
+        <div class="side-head"><div><span class="eyebrow tiny">DAFTAR ISI</span><h2>Jelajahi buku</h2></div><button class="mobile-close" id="closeToc">×</button></div>
+        <div class="toc-search"><span>⌕</span><input id="tocSearch" type="search" placeholder="Cari judul puisi..."></div>
+        <nav id="tocList" class="toc-list" aria-label="Daftar isi"></nav>
+        <div class="book-meta">
+          <div class="meta-row"><span>Penulis</span><b>Evi Apriyanti</b></div>
+          <div class="meta-row"><span>Penerbit</span><b>Goresan Pena</b></div>
+          <div class="meta-row"><span>Terbit</span><b>Maret 2023</b></div>
+          <div class="meta-row"><span>ISBN</span><b>978-623-367-565-9</b></div>
+        </div>
+      </aside>
+
+      <section class="reader">
+        <div class="reader-toolbar">
+          <button class="tool-btn toc-toggle" id="tocToggle">☰ <span>Daftar isi</span></button>
+          <div class="page-status"><span id="pageCurrent">1</span><i>/</i><span id="pageTotal">65</span></div>
+          <div class="toolbar-right">
+            <button class="tool-btn" id="zoomOut" title="Perkecil">−</button>
+            <span id="zoomLabel">100%</span>
+            <button class="tool-btn" id="zoomIn" title="Perbesar">+</button>
+            <button class="tool-btn" id="downloadBtn" title="Unduh PDF">↓</button>
+          </div>
+        </div>
+
+        <div class="stage">
+          <button class="nav-arrow prev" id="prevBtn" aria-label="Halaman sebelumnya">‹</button>
+          <div class="page-wrap" id="pageWrap">
+            <div class="page-loading" id="loading">Menyiapkan halaman buku…</div>
+            <canvas id="pdfCanvas" aria-label="Halaman buku digital"></canvas>
+          </div>
+          <button class="nav-arrow next" id="nextBtn" aria-label="Halaman berikutnya">›</button>
+        </div>
+
+        <div class="reader-bottom">
+          <button class="text-btn" id="firstBtn">|‹ Awal</button>
+          <input id="pageSlider" type="range" min="1" max="65" value="1" aria-label="Geser halaman">
+          <button class="text-btn" id="lastBtn">Akhir ›|</button>
+        </div>
+        <div class="mobile-hint">Geser halaman dengan tombol panah atau gunakan daftar isi.</div>
+      </section>
+    </section>
+
+    <footer class="footer">
+      <span>“Puisi adalah bahasa sanubari dan curahan rasa dari relung jiwa.”</span>
+      <small>Bianglala Nuansa Rasa · Evi Apriyanti · Goresan Pena, 2023</small>
+    </footer>
+  </main>
+
+  <div class="toast" id="toast" role="status"></div>
+  <script src="app.js"></script>
+</body>
+</html>
